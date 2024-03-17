@@ -3,7 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { HeluxPluginDevtool } from "@helux/plugin-devtool";
+import { addPlugin } from "helux";
 
+if (typeof window !== "undefined") {
+	addPlugin(HeluxPluginDevtool);
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
